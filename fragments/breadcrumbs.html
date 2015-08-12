@@ -1,0 +1,11 @@
+<div class="page-bar">
+    <ul class="page-breadcrumbs">
+        <li ng-repeat="breadcrumb in  breadcrumbs" ng-class="breadcrumb.active ? 'active' : ''">
+            <i class="fa {{ breadcrumb.icon }}"></i>
+            <a href="{{ $index == 0 ? breadcrumb.url : breadcrumb.url + accountId }}" ng-bind="breadcrumb.title"></a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+    </ul>
+    <a class="btn btn-green pull-right" type="submit" ng-if="formName == 'account-details'" href="#/form/personal/new">APPLY NOW</a>
+    <div class="padding-15px" ng-hide="breadcrumbs.length > 0"><div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>
+</div>

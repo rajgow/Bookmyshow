@@ -1,0 +1,53 @@
+<section class="page-section">
+        <div ng-include='"fragments/breadcrumbs.html"'></div>
+        <div class="row mar-top-20px">
+            <div class="col-md-12">
+                <div class="portlet">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa user"></i>
+                            <span class="caption-subject  bold uppercase">Personal Information</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <form class="form-horizontal" name="application.form" novalidate>
+                            <div class="form-body">
+                                <div class="form-group {{ (application.form.$submitted || application.form.name.$touched) && application.form.name.$error.required  ? 'has-error' : '' }}">
+                                    <label class="col-md-3 control-label" ng-if="formField.title != ''">
+                                        <span>Name</span>
+                                        <span ng-if="formField.required" class="font-green">*</span>
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Please Enter" name="name" ng-model="currentUser.name" class="form-control" required>
+                                        <span ng-show="(application.form.$submitted || application.form.name.$touched)">
+                                                <span class="help-block" ng-show="application.form.name.$error.required">Please enter name</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group {{ (application.form.$submitted || application.form.seats.$touched) && ( application.form.seats.$error.required || application.form.seats.$invalid ) ? 'has-error' : '' }}">
+                                    <label class="col-md-3 control-label" ng-if="formField.title != ''">
+                                        <span>Number of seats</span>
+                                        <span ng-if="formField.required" class="font-green">*</span>
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="number" placeholder="Please Enter" name="seats" ng-model="currentUser.seats" class="form-control" required>
+                                        <span ng-show="(application.form.$submitted || application.form.seats.$touched)">
+                                                <span class="help-block" ng-show="application.form.seats.$error.required">Please enter Number of seats</span>
+                                                <span class="help-block" ng-show="!application.form.seats.$error.required && application.form.seats.$invalid">Invalid Seats Count! Please re enter</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button class="btn btn-green" type="submit" ng-disabled="application.formSubmitted" ng-click="submit(application.form.$valid)">Start Selecting</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
