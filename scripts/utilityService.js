@@ -19,7 +19,7 @@
       utilityService.getCurrentUser = function() {
           if(!sessionStorage.currentUser) {
              sessionStorage.setItem("currentUser", JSON.stringify({}));
-             sessionStorage.setItem("confirmedSeats", JSON.stringify({"totalSeatsLeft":105,"list":[{"user":"RAJESH","count":3,"seats":"A1,B6,C10"}]}));
+             sessionStorage.setItem("confirmedSeats", JSON.stringify({"totalSeatsLeft":105,"list":[]}));
           }
           return  JSON.parse(sessionStorage.currentUser);
       };
