@@ -1,0 +1,36 @@
+<section class="page-section">
+    <div ng-include='"fragments/breadcrumbs.html"'></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-check"></i>
+                        <span class="caption-subject bold uppercase"> Confirmation</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <table class="table table-hover table-striped table-condensed ng-scope">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>No.of Seats</th>
+                                        <th>Seats</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="confirmedSeat in confirmedSeats">
+                                    <td ng-bind="confirmedSeat.user"></td>
+                                    <td ng-bind="confirmedSeat.count"></td>
+                                    <td ng-bind="confirmedSeat.seats"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
